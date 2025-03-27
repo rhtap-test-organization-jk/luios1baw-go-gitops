@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: luios1baw-go-gitops
+  description: This is GitOps manifest for luios1baw-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=luios1baw-go
+    backstage.io/kubernetes-id: luios1baw-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: luios1baw-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:luios1baw-go
